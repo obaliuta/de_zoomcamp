@@ -1,6 +1,6 @@
 variable "credentials" {
   description = "credentials"
-  default     = "/home/obaliuta/working_directory/terrademo/keys/my-keys.json"
+  default     = "/home/obaliuta/.google/credentials/google_credentials.json"
 }
 
 variable "region" {
@@ -20,12 +20,12 @@ variable "location" {
 
 variable "gsc_bucket_name" {
   description = "My storage bucket name"
-  default     = "zoomcamp-455010-terra-bucket"
+  default     = "trips_raw_data"
 }
 
 variable "bq_dataset_name" {
   description = "My BigQuery dataset name"
-  default     = "demo_dataset"
+  default     = "trips_data_all"
 }
 
 variable "gsc_storage_class" {
