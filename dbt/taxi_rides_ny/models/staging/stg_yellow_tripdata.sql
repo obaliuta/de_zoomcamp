@@ -35,7 +35,8 @@ select
     cast(0 as numeric) as ehail_fee,
     cast(improvement_surcharge as numeric) as improvement_surcharge,
     cast(total_amount as numeric) as total_amount,
-    coalesce({{ dbt.safe_cast("payment_type", api.Column.translate_type("integer")) }},0) as payment_type
+    coalesce({{ dbt.safe_cast("payment_type", api.Column.translate_type("integer")) }},0) as payment_type,
+    {{ get_payment_type_description("payment_type") }} as payment_type_description
 from tripdata
 where rn = 1
 
